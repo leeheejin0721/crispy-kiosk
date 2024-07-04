@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=""></script>
+    <script>
+        axios.get('')
+        .then(result => {
+            console.log('통신결과 : ', result.data);
+            console.log(result.data[0].name);
+        })
+        .catch(err => {
+            console.log('에러 발생 : ', err);
+        });
+    </script>
+    <title>crispy-kiosk</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="#"><img src="./images/logo.png" alt="header-logo"></a></h1>
+            </div>
+            <nav class="main-menu">
+                <ul class="gnb">
+                    <li><a href="#">추천메뉴</a></li>
+                    <li><a href="#">도넛 단품</a></li>
+                    <li><a href="#">커피</a></li>
+                    <li><a href="#">아더드링크</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="best-menu">
+            <div class="container">
+                <h2>추천 메뉴</h2>
+                <ul class="submenu">
+                    <li>
+                        <h3><a href="#">빠른제공순</a></h3>
+                    </li>
+                    <li>
+                        <h3><a href="#">가격순</a></h3>
+                    </li>
+                </ul>
+                <div class="fast">
+                    <div class="best1">
+                        <img src="./images/best1.png" alt="best1">
+                        <p>오리지널 글레이즈드 더즌</p>
+                        <p><b>16,000</b>원</p>
+                    </div>
+                    <div class="best2">
+                        <img src="./images/best2.png" alt="best2">
+                        <p>카카오프렌즈 더즌</p>
+                        <p><b>24,500</b>원</p>
+                    </div>
+                    <div class="best3">
+                        <img src="./images/best3.png" alt="best3">
+                        <p>카카오프렌즈 하프더즌</p>
+                        <p><b>17,500</b>원</p>
+                    </div>
+                    <div class="best4">
+                        <img src="./images/best4.png" alt="best4">
+                        <p>오리지널 글레이즈드 하프더즌</p>
+                        <p><b>10,200</b>원</p>
+                    </div>
+                    <div class="best5">
+                        <img src="./images/best5.png" alt="best5">
+                        <p>어쏘티드 더즌(FIX)</p>
+                        <p><b>18,000</b>원</p>
+                    </div>
+                    <div class="best6">
+                        <img src="./images/best6.png" alt="best6">
+                        <p>오리지널 페어링</p>
+                        <p><b>5,500</b>원</p>
+                    </div>
+                </div> <!-- fast -->
+    
+                <div class="price">
+                    <div class="price1">
+                        <img src="./images/best6.png" alt="best6">
+                        <p>오리지널 페어링</p>
+                        <p><b>5,500</b>원</p>
+                    </div>
+                    <div class="price2">
+                        <img src="./images/best4.png" alt="best4">
+                        <p>오리지널 글레이즈드 하프더즌</p>
+                        <p><b>10,200</b>원</p>
+                    </div>
+                    <div class="price3">
+                        <img src="./images/best1.png" alt="best1">
+                        <p>오리지널 글레이즈드 더즌</p>
+                        <p><b>16,000</b>원</p>
+                    </div>
+                    <div class="price4">
+                        <img src="./images/best3.png" alt="best3">
+                        <p>카카오프렌즈 하프더즌</p>
+                        <p><b>17,500</b>원</p>
+                    </div>
+                    <div class="price5">
+                        <img src="./images/best5.png" alt="best5">
+                        <p>어쏘티드 더즌(FIX)</p>
+                        <p><b>18,000</b>원</p>
+                    </div>
+                    <div class="price6">
+                        <img src="./images/best2.png" alt="best2">
+                        <p>카카오프렌즈 더즌</p>
+                        <p><b>24,500</b>원</p>
+                    </div>
+                </div> <!-- price -->
+            </div> <!-- container -->
+        </section><!-- best-menu -->
+
+        <section id="cart">
+            <div class="container">
+                <div class="cart-title">
+                    <h3 class="cart">CART<span>0</span></h3>
+                </div>
+                <div class="cart-txt">
+                    <h4>추천메뉴</h4>
+                    <div class="cart-in">
+                        <img src="./images/best1.png" alt="best1">
+                        <p>오리지널 글레이즈드 더즌</p>
+                        <span>X</span>
+                    </div> 
+                    <div class="count-price">
+                        <p><span class="manus">-</span><span class="count">1</span><span class="plus">+</span></p>
+                        <p><b>16,000</b>원</p>
+                    </div>
+                </div>
+                <div class="total">
+                    <h3>Total</h3>
+                    <h3>0</h3>
+                </div>
+                <div class="credit-button">
+                    <button>Pay now</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
