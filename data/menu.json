@@ -1,0 +1,38 @@
+[
+    {
+        "id": 0,
+        "name": "오리지널 글레이즈드 더즌",
+        "price": 16000,
+        "image": "./images/best1.png"
+    },
+    {
+        "id": 1,
+        "name": "카카오프렌즈 더즌",
+        "price": 24500,
+        "image": "./images/best2.png"
+    },
+    {
+        "id": 2,
+        "name": "카카오프렌즈 하프더즌",
+        "price": 17500,
+        "image": "./images/best3.png"
+    },
+    {
+        "id": 3,
+        "name": "오리지널 글레이즈드 하프더즌",
+        "price": 10200,
+        "image": "./images/best4.png"
+    },
+    {
+        "id": 4,
+        "name": "어쏘티드 더즌(FIX)",
+        "price": 18000,
+        "image": "./images/best5.png"
+    },
+    {
+        "id": 5,
+        "name": "오리지널 페어링",
+        "price": 5500,
+        "image": "./images/best6.png"
+    }
+]
