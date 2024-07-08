@@ -29,6 +29,11 @@
 }
 .main-menu li > a {
     font-size: 24px;
+    display: flex;
+}
+.main-menu a.active {
+    font-weight: bold;
+    color: #ff0000; /* 강조 색상 변경 */
 }
 
 
@@ -37,10 +42,11 @@
     position: relative;
 }
 .best-box {
+    display: none;
     width: 45%;
     /* background-color: aqua; */
     position: absolute;
-    top: -540px;
+    top: -500px;
     left: 25%;
 }
 .best-box > h2 {
@@ -96,15 +102,19 @@
 .fast img {
     width: 90%;
 }
+.donet {
+    display: none;
+}
 
 /* cart */
 #cart .cart-box {
     position: absolute;
-    top: -540px;
+    top: -500px;
     left: 72%;
 }
 #cart .cart-box > .cart-title {
     text-align: center;
+    margin-bottom: 30px;
 }
 #cart .cart-box .cart {
     font-weight: normal;
@@ -139,13 +149,13 @@
     justify-content: space-between;
     padding-right: 60px;
     position: relative;
-    top: 540px;
+    top: 490px;
 }
 #cart .cart-box > .credit-button {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 540px;
+    top: 500px;
     padding-right: 60px;
 }
 #cart .cart-box > .credit-button > #pay {

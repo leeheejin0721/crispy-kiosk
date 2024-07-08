@@ -34,5 +34,17 @@
         "name": "오리지널 페어링",
         "price": 5500,
         "image": "./images/best6.png"
+    },
+    {
+        "id": 6,
+        "name": "오리지널 글레이즈드",
+        "price": 1700,
+        "image": "./images/donut1.png"
+    },
+    {
+        "id": 7,
+        "name": "하트 뿅뿅 라이언",
+        "price": 3600,
+        "image": "./images/donut2.png"
     }
 ]
