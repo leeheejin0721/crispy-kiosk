@@ -46,5 +46,191 @@
         "name": "하트 뿅뿅 라이언",
         "price": 3600,
         "image": "./images/donut2.png"
+    },
+    {
+        "id": 8,
+        "name": "볼빨간 춘식이",
+        "price": 3600,
+        "image": "./images/donut3.png"
+    },
+    {
+        "id": 9,
+        "name": "수박 냠냠 라이언",
+        "price": 3500,
+        "image": "./images/donut4.png"
+    },
+    {
+        "id": 10,
+        "name": "복숭아 쪽쪽 어피치",
+        "price": 3500,
+        "image": "./images/donut5.png"
+    },
+    {
+        "id": 11,
+        "name": "망고타는 무지&콘",
+        "price": 3500,
+        "image": "./images/donut6.png"
+    },
+    {
+        "id": 12,
+        "name": "초코홀릭",
+        "price": 1900,
+        "image": "./images/donut7.png"
+    },
+    {
+        "id": 13,
+        "name": "초콜릿 아이스드 글레이즈드",
+        "price": 1900,
+        "image": "./images/donut8.png"
+    },
+    {
+        "id": 14,
+        "name": "슈거 코티드",
+        "price": 1700,
+        "image": "./images/donut9.png"
+    },
+    {
+        "id": 15,
+        "name": "뉴욕 치즈케익",
+        "price": 2200,
+        "image": "./images/donut10.png"
+    },
+    {
+        "id": 16,
+        "name": "글레이즈드 사워크림",
+        "price": 1900,
+        "image": "./images/donut11.png"
+    },
+    {
+        "id": 17,
+        "name": "글레이즈드 초콜릿 케익",
+        "price": 1900,
+        "image": "./images/donut12.png"
+    },
+    {
+        "id": 18,
+        "name": "로투스 비스코프 도넛",
+        "price": 2200,
+        "image": "./images/donut13.png"
+    },
+    {
+        "id": 19,
+        "name": "프리미엄 스트로베리 필드",
+        "price": 2200,
+        "image": "./images/donut14.png"
+    },
+    {
+        "id": 20,
+        "name": "우유크림 듬뿍",
+        "price": 2200,
+        "image": "./images/donut15.png"
+    },
+    {
+        "id": 21,
+        "name": "초코 우유크림 듬뿍",
+        "price": 2200,
+        "image": "./images/donut16.png"
+    },
+    {
+        "id": 22,
+        "name": "초코 우유크림 듬뿍",
+        "price": 2200,
+        "image": "./images/donut16.png"
+    },
+    {
+        "id": 23,
+        "name": "메이플 링",
+        "price": 1900,
+        "image": "./images/donut17.png"
+    },
+    {
+        "id": 24,
+        "name": "아메리카노",
+        "price": 3700,
+        "image": "./images/coffee1.png"
+    },
+    {
+        "id": 25,
+        "name": "라떼",
+        "price": 3900,
+        "image": "./images/coffee2.png"
+    },
+    {
+        "id": 26,
+        "name": "바닐라 라떼",
+        "price": 4400,
+        "image": "./images/coffee3.png"
+    },
+    {
+        "id": 27,
+        "name": "모카",
+        "price": 4400,
+        "image": "./images/coffee4.png"
+    },
+    {
+        "id": 28,
+        "name": "카라멜 마끼아또",
+        "price": 4400,
+        "image": "./images/coffee5.png"
+    },
+    {
+        "id": 29,
+        "name": "카푸치노",
+        "price": 3900,
+        "image": "./images/coffee6.png"
+    },
+    {
+        "id": 30,
+        "name": "자몽 블랙티",
+        "price": 4900,
+        "image": "./images/drink1.png"
+    },
+    {
+        "id": 31,
+        "name": "유자 민트티",
+        "price": 4900,
+        "image": "./images/drink2.png"
+    },
+    {
+        "id": 32,
+        "name": "청귤 캐모마일티",
+        "price": 4900,
+        "image": "./images/drink3.png"
+    },
+    {
+        "id": 33,
+        "name": "스트로베리 스무디",
+        "price": 5500,
+        "image": "./images/drink4.png"
+    },
+    {
+        "id": 34,
+        "name": "망고 스무디",
+        "price": 5500,
+        "image": "./images/drink5.png"
+    },
+    {
+        "id": 35,
+        "name": "살구자두 스무디",
+        "price": 5500,
+        "image": "./images/drink6.png"
+    },
+    {
+        "id": 36,
+        "name": "메론 스무디",
+        "price": 5500,
+        "image": "./images/drink7.png"
+    },
+    {
+        "id": 37,
+        "name": "다크 초콜릿",
+        "price": 3700,
+        "image": "./images/drink8.png"
+    },
+    {
+        "id": 38,
+        "name": "밀크 티",
+        "price": 4200,
+        "image": "./images/drink9.png"
     }
 ]

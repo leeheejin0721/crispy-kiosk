@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 14%;
 }
 .main-menu li {
     margin: 20px 30px;
@@ -33,16 +34,43 @@
 }
 .main-menu a.active {
     font-weight: bold;
-    color: #ff0000; /* 강조 색상 변경 */
+    color: #CF122B; /* 강조 색상 변경 */
 }
 
-
+/* kiosk-main */
+#kiosk-main {
+    position: relative;
+}
+.slide {
+    display: flex;
+}
+.slide > .slide-left {
+    position: absolute;
+    top: -90px;
+    left: 22%;
+}
+.slide > .slide-right {
+    position: absolute;
+    top: -90px;
+    left: 67%;
+}
+.slide > .slide-left > a {
+    width: 100%;
+}
+.slide > .slide-left > a > img {
+    width: 8%;
+}
+.slide > .slide-right > a {
+    width: 100%;
+}
+.slide > .slide-right > a > img {
+    width: 8%;
+}
 /* best-menu */
-#best-menu {
+.best-menu {
     position: relative;
 }
 .best-box {
-    display: none;
     width: 45%;
     /* background-color: aqua; */
     position: absolute;
@@ -62,6 +90,18 @@
 .best-box li > a {
     margin-top: 30px;
     font-size: 20px;
+}
+.submenu a.active {
+    color: #CF122B;
+    font-weight: bold;
+}
+
+.best-box > .fast {
+    display: grid;
+}
+
+.best-box > .price {
+    display: none;
 }
 .best-box > .fast {
     display: grid;
@@ -99,12 +139,10 @@
 .price div:nth-child(5) { grid-area: e; }
 .price div:nth-child(6) { grid-area: f; }
 
-.fast img {
+.fast img, .price img {
     width: 90%;
 }
-.donet {
-    display: none;
-}
+
 
 /* cart */
 #cart .cart-box {
