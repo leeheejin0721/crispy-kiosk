@@ -11,11 +11,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const slideRightButton = document.querySelector('.slide-right');
     const cancelButton = document.getElementById('can');
     const payButton = document.getElementById('pay');
+    const modal = document.querySelector('.modal');
+    const modalButtons = modal.querySelectorAll('.payment-buttons button');
+    const paymentAmountElement = modal.querySelector('.payment-amount');
+    const totalElement = modal.querySelector('.total-amount');
+    const changeAmountElement = modal.querySelector('.change-amount');
+    const modalPayButton = modal.querySelector('.pay-button');
+    let paymentAmount = 0;
 
     const cartBox = document.querySelector('.cart-box');
     const cartTxt = document.querySelector('.cart-txt');
     const cartCount = document.querySelector('.cart span');
-    const totalElement = document.querySelector('.total h3:last-child');
+    const cartTotalElement = document.querySelector('.total h3:last-child');
+    // const totalElement = document.querySelector('.total h3:last-child');
 
     let currentMenus = [];
     let currentStartIndex = 0;
@@ -26,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cartItems.forEach(item => item.remove());
         
         const emptyMessage = document.createElement('p');
-        emptyMessage.textContent = '장바구니가 비어있습니다.';
+        emptyMessage.textContent = 'Your cart is empty.';
         emptyMessage.className = 'empty-cart-message';
         cartTxt.appendChild(emptyMessage);
         
@@ -80,13 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const cartItems = cartTxt.querySelectorAll('.cart-in');
         cartItems.forEach(item => item.remove());
         
-        // 장바구니가 비어있지 않은 경우에만 메시지를 추가합니다.
-        if (cartItems.length > 0) {
-            const emptyMessage = document.createElement('p');
-            emptyMessage.textContent = '장바구니가 비어있습니다.';
-            emptyMessage.className = 'empty-cart-message';
-            cartTxt.appendChild(emptyMessage);
-        }
+        const emptyMessage = document.createElement('p');
+        emptyMessage.textContent = 'Your cart is empty.';
+        emptyMessage.className = 'empty-cart-message';
+        cartTxt.appendChild(emptyMessage);
         
         updateCartCount();
         updateTotal();
@@ -100,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const emptyMessage = cartTxt.querySelector('.empty-cart-message');
             if (!emptyMessage) {
                 const newEmptyMessage = document.createElement('p');
-                newEmptyMessage.textContent = '장바구니가 비어있습니다.';
+                newEmptyMessage.textContent = 'Your cart is empty.';
                 newEmptyMessage.className = 'empty-cart-message';
                 cartTxt.appendChild(newEmptyMessage);
             }
@@ -238,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const emptyMessage = cartTxt.querySelector('.empty-cart-message');
             if (!emptyMessage) {
                 const newEmptyMessage = document.createElement('p');
-                newEmptyMessage.textContent = 'Your cart is empty';
+                newEmptyMessage.textContent = 'Your cart is empty.';
                 newEmptyMessage.className = 'empty-cart-message';
                 cartTxt.appendChild(newEmptyMessage);
             }
@@ -258,10 +263,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const count = parseInt(item.querySelector('.count').textContent);
             total += price * count;
         });
-        totalElement.textContent = total.toLocaleString() + '원';
+        
+        // 장바구니의 총액 업데이트
+        cartTotalElement.textContent = total.toLocaleString() + '원';
+        
+        // 모달의 총액 업데이트 (showModal 함수에서 사용)
+        if (totalElement) {
+            totalElement.textContent = `total : ${total.toLocaleString()}원`;
+        }
     
         if (total === 0) {
-            totalElement.textContent = '0원';
+            cartTotalElement.textContent = '0원';
+            if (totalElement) {
+                totalElement.textContent = 'total : 0원';
+            }
         }
     }
 
@@ -285,19 +300,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     if (menuItem.classList.contains('donut-dozen-menu')) {
                         const donutDozenMenus = menus.filter(menu => menu.id >= 0 && menu.id <= 4);
-                        handleMenuClick(donutDozenMenus, '🎂도넛 더즌');
+                        handleMenuClick(donutDozenMenus, '🎂 도넛 더즌');
                     } else if (menuItem.classList.contains('donut-menu')) {
                         const donutMenus = menus.filter(menu => menu.id >= 6 && menu.id <= 22);
-                        handleMenuClick(donutMenus, '🍩도넛 단품');
+                        handleMenuClick(donutMenus, '🍩 도넛 단품');
                     } else if (menuItem.classList.contains('coffee-menu')) {
                         const coffeeMenus = menus.filter(menu => menu.id >= 23 && menu.id <= 28);
-                        handleMenuClick(coffeeMenus, '☕커피');
+                        handleMenuClick(coffeeMenus, '☕ 커피');
                     } else if (menuItem.classList.contains('drink-menu')) {
                         const drinkMenus = menus.filter(menu => menu.id >= 29 && menu.id <= 37);
-                        handleMenuClick(drinkMenus, '🍹아더드링크');
+                        handleMenuClick(drinkMenus, '🍹 아더드링크');
                     } else if (menuText.includes('추천메뉴')) {
                         const recommendedMenus = menus.filter(menu => menu.id < 6);
-                        handleMenuClick(recommendedMenus, '👍추천 메뉴');
+                        handleMenuClick(recommendedMenus, '👍 추천 메뉴');
                     } else {
                         bestBox.style.display = 'none';
                         donut.style.display = 'none';
@@ -356,12 +371,74 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     payButton.addEventListener('click', function() {
-        if (confirm('정말로 결제하시겠습니까?')) {
-            alert('결제가 완료되었습니다.');
-            clearCart();
-            resetToInitialScreen();
+        const cartItems = document.querySelectorAll('.cart-in');
+        if (cartItems.length === 0) {
+            alert('상품을 선택하세요.');
+        } else {
+            showModal();
         }
     });
+
+    function showModal() {
+        const total = calculateTotal();
+        totalElement.textContent = `Total : ${total.toLocaleString()}원`;
+        paymentAmountElement.textContent = '지불 금액 : 0원';
+        changeAmountElement.textContent = '거스름돈 : 0원';
+        paymentAmount = 0;
+        modal.style.display = 'block';
+    }
+
+    function hideModal() {
+        modal.style.display = 'none';
+        // 모달을 숨길 때 지불 금액과 거스름돈을 초기화
+        paymentAmount = 0;
+        paymentAmountElement.textContent = '지불 금액 : 0원';
+        changeAmountElement.textContent = '거스름돈 : 0원';
+    }
+
+    modalButtons.forEach((button) => {
+        button.addEventListener('click', function() {
+            const amount = parseInt(this.textContent.replace(/[^0-9]/g, ''));
+            paymentAmount += amount;
+            paymentAmountElement.textContent = `지불 금액 : ${paymentAmount.toLocaleString()}원`;
+            updateChangeAmount();
+        });
+    });
+
+    function updateChangeAmount() {
+        const total = calculateTotal();
+        const change = Math.max(0, paymentAmount - total);
+        changeAmountElement.textContent = `거스름돈 : ${change.toLocaleString()}원`;
+    }
+
+    modalPayButton.addEventListener('click', function() {
+        const total = calculateTotal();
+        if (paymentAmount < total) {
+            alert('금액이 부족합니다.');
+        } else {
+            const change = paymentAmount - total;
+            const confirmPayment = confirm(`결제하시겠습니까?\nTotal : ${total.toLocaleString()}원\n지불금액 : ${paymentAmount.toLocaleString()}원\n거스름돈 : ${change.toLocaleString()}원`);
+            
+            if (confirmPayment) {
+                alert(`결제가 완료되었습니다.`);
+                clearCart();
+                hideModal();
+                resetToInitialScreen();
+            }
+            // 사용자가 취소를 선택한 경우, 아무 작업도 하지 않음 (모달이 그대로 유지됨)
+        }
+    });
+
+    function calculateTotal() {
+        const cartItems = document.querySelectorAll('.cart-in');
+        let total = 0;
+        cartItems.forEach(item => {
+            const price = parseInt(item.querySelector('.menu-price b').textContent.replace(/,/g, ''));
+            const count = parseInt(item.querySelector('.count').textContent);
+            total += price * count;
+        });
+        return total;
+    }
 
     // 초기화면 설정
     const initialRecommendedMenu = document.querySelector('.main-menu a:first-child');

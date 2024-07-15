@@ -2,9 +2,9 @@
 
 .container {
     position: relative;
-    width: 1680px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 10px;
 }
 
 /* header */
@@ -60,14 +60,14 @@
 .slide > .slide-left {
     position: absolute;
     z-index: 100;
-    top: -78px;
+    top: -73px;
     left: 22%;
 }
 .slide > .slide-right {
     position: absolute;
     z-index: 100;
-    top: -78px;
-    left: 68%;
+    top: -73px;
+    left: 70%;
 }
 .slide > .slide-left > a {
     width: 100%;
@@ -86,7 +86,7 @@
     position: relative;
 }
 .best-box {
-    width: 45%;
+    width: 47%;
     /* background-color: aqua; */
     position: absolute;
     top: -520px;
@@ -189,28 +189,94 @@
     font-size: 14px;
     margin-bottom: 10px;
 }
-.best-box > .fast div:hover,
+.best-box > .fast div:hover {
+    border-color: #0a4925;
+}
 .best-box > .price div:hover {
-    border-color: #CF122B;
+    border-color: #636363;
 }
 
-#cart .cart-box > .credit-button > #pay:hover,
+#cart .cart-box > .credit-button > #pay:hover {
+    background-color: #0a4925;
+}
 #cart .cart-box > .credit-button > #can:hover {
+    background-color: #636363;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.modal h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-buttons button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.payment-buttons button:hover {
+    background-color: #d0d0d0;
+}
+
+.payment-amount, .total-amount, .change-amount {
+    text-align: right;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.pay-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
     background-color: #CF122B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pay-button:hover {
+    background-color: #a50f22;
 }
 
 /* cart */
 #cart .cart-box {
     z-index: 200000;
-    width: 410px;
+    width: 425px;
     position: absolute;
-    top: -520px;
-    left: 72%;
+    top: -500px;
+    left: 75%;
 }
 #cart .cart-box .cart-title {
     text-align: center;
     padding-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 #cart .cart-box .cart {
     font-weight: normal;
@@ -222,15 +288,16 @@
     color: white;
     border-radius: 45%;
     padding: 2px;
+    font-family: 'Pretendard-Regular';
 }
 #cart .cart-box > .cart-bg {
     background-color: rgb(235, 235, 235);
     border-radius: 15px;
-    width: 410px;
-    height: 740px;
+    width: 425px;
+    height: 710px;
 }
 #cart .cart-box .cart-txt {
-    height: 658px;
+    height: 620px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -257,7 +324,7 @@
     position: relative;
     top: 15px;
     padding-right: 60px;
-    width: 470px;
+    width: 485px;
 }
 #cart .cart-box > .credit-button > #pay {
     background-color: #136938;
@@ -301,7 +368,6 @@
     font-size: 15px;
 }
 
-
 .cart-in .menu-name {
     font-family: 'Pretendard-Regular', sans-serif;
     font-size: 15px;
@@ -314,10 +380,12 @@
 }
 .quantity-btn {
     cursor: pointer;
-    border: 1px solid black;
     width: 5px;
     height: 5px;
     padding: 2px;
+}
+.quantity-btn:hover {
+    color: #CF122B;
 }
 /* .count {
     border-top: 1px solid black;
@@ -327,8 +395,7 @@
     margin-right: 10px;
 }
 .quantity-btn.active {
-    background-color: #136938;
-    color: white;
+    color: #CF122B;
   }
 
 .remove-item {
@@ -344,6 +411,7 @@
     background-color: black;
     top: 50%;
     left: 0;
+    margin-left: 15px;
   }
   .remove-item span:first-child {
     transform: rotate(45deg);
@@ -358,15 +426,6 @@
     text-align: center;
     font-style: italic;
     color: #888;
-    margin-top: 20px;
+    margin-top: 10px;
+    font-size: 24px;
 }
-
-
-
-/* footer */
-/* .footer-bg {
-    position: relative;
-    top: 358px;
-    background-color: #CF122B;
-    height: 60px;
-} */
