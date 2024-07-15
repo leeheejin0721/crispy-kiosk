@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelButton = document.getElementById('can');
     const payButton = document.getElementById('pay');
     const modal = document.querySelector('.modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
     const modalButtons = modal.querySelectorAll('.payment-buttons button');
-    const paymentAmountElement = modal.querySelector('.payment-amount');
     const totalElement = modal.querySelector('.total-amount');
+    const paymentAmountElement = modal.querySelector('.payment-amount');
     const changeAmountElement = modal.querySelector('.change-amount');
     const modalPayButton = modal.querySelector('.pay-button');
     let paymentAmount = 0;
@@ -386,15 +387,19 @@ document.addEventListener('DOMContentLoaded', function() {
         changeAmountElement.textContent = '거스름돈 : 0원';
         paymentAmount = 0;
         modal.style.display = 'block';
+        modalOverlay.style.display = 'block';
     }
 
     function hideModal() {
         modal.style.display = 'none';
+        modalOverlay.style.display = 'none';
         // 모달을 숨길 때 지불 금액과 거스름돈을 초기화
         paymentAmount = 0;
         paymentAmountElement.textContent = '지불 금액 : 0원';
         changeAmountElement.textContent = '거스름돈 : 0원';
     }
+
+    modalOverlay.addEventListener('click', hideModal);
 
     modalButtons.forEach((button) => {
         button.addEventListener('click', function() {
