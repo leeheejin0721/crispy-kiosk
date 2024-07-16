@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartTxt = document.querySelector('.cart-txt');
     const cartCount = document.querySelector('.cart span');
     const cartTotalElement = document.querySelector('.total h3:last-child');
-    // const totalElement = document.querySelector('.total h3:last-child');
 
     let currentMenus = [];
     let currentStartIndex = 0;
@@ -268,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 장바구니의 총액 업데이트
         cartTotalElement.textContent = total.toLocaleString() + '원';
         
-        // 모달의 총액 업데이트 (showModal 함수에서 사용)
+        // 모달의 총액 업데이트
         if (totalElement) {
             totalElement.textContent = `total : ${total.toLocaleString()}원`;
         }
@@ -430,7 +429,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 hideModal();
                 resetToInitialScreen();
             }
-            // 사용자가 취소를 선택한 경우, 아무 작업도 하지 않음 (모달이 그대로 유지됨)
         }
     });
 

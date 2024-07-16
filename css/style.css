@@ -39,7 +39,7 @@
 .main-menu a.active {
     font-family: 'Pretendard-Regular', sans-serif;
     font-weight: bold;
-    color: #CF122B; /* 강조 색상 변경 */
+    color: #CF122B;
 }
 
 /* kiosk-main */
@@ -54,8 +54,8 @@
 }
 
 .slide-left img:hover, .slide-right img:hover {
-    transform: scale(1.1);  /* 이미지를 10% 확대 */
-    opacity: 0.8;  /* 이미지를 약간 투명하게 */
+    transform: scale(1.1);  
+    opacity: 0.8;
 }
 .slide > .slide-left {
     position: absolute;
@@ -87,7 +87,6 @@
 }
 .best-box {
     width: 47%;
-    /* background-color: aqua; */
     position: absolute;
     top: -520px;
     left: 25%;
@@ -172,12 +171,12 @@
 .fast img, .price img {
     width: 90%;
     border-radius: 10px;
-    border: 1px solid #8C8C8C; /* 회색 테두리 추가 */
-    background-color: #ffffff; /* 이미지가 투명할 경우를 대비한 배경 색상 */
+    border: 1px solid #8C8C8C;
+    background-color: #ffffff; 
 }
 .fast img:hover, .price img:hover {
-    transform: scale(1.01);  /* 이미지를 10% 확대 */
-    opacity: 0.8;  /* 이미지를 약간 투명하게 */
+    transform: scale(1.01); 
+    opacity: 0.8;
 }
 .main-name {
     font-family: 'Pretendard-Regular', sans-serif;
@@ -358,8 +357,8 @@
 .cart-in {
     display: flex;
     justify-content: center;
-    padding: 10px; /* 내부 여백 */
-    border-bottom: 1px solid #c4c4c4; /* 하단 테두리 추가 */
+    padding: 10px;
+    border-bottom: 1px solid #c4c4c4;
     width: 425px;
     margin: auto;
 }
@@ -372,8 +371,8 @@
     font-size: 15px;
 }
 .cart-in img {
-    max-width: 100px; /* 이미지의 최대 너비 지정 */
-    margin-right: 10px; /* 이미지 오른쪽 여백 */
+    max-width: 100px;
+    margin-right: 10px; 
 }
 .minus-plus {
     font-size: 15px;
@@ -383,7 +382,6 @@
     font-family: 'Pretendard-Regular', sans-serif;
     font-size: 15px;
     width: 240px;
-    /* background-color: #136938; */
 }
 .menu-price {
     font-family: 'Pretendard-Regular', sans-serif;
@@ -398,10 +396,6 @@
 .quantity-btn:hover {
     color: #CF122B;
 }
-/* .count {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-} */
 .plus {
     margin-right: 10px;
 }
